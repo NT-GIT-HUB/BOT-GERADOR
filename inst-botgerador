@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+echo -e "\E[44;1;37m     INSTALACAO BOT SSH TESTE     \E[0m"
+echo -e "\nINSTALANDO AGUARDE...."
+apt update -y > /dev/null 2>&1 && apt install unzip at jq curl -y > /dev/null 2>&1
+mkdir $HOME/BOT
+cd $HOME/BOT && wget https://raw.githubusercontent.com/NT-GIT-HUB/BOT-GERADOR/main/botgen.zip
+unzip botgen.zip > /dev/null 2>&1 && rm botgen.zip > /dev/null 2>&1
+chmod +x $(ls)
+mv botgen /bin/botgen
+clear && echo -e "INSTALADO COM SUCESSO !\nPARA ATIVAR EXECULTE O COMANDO botgen"
+cd $HOME && rm inst-botgerador > /dev/null 2>&1
