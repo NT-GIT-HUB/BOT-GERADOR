@@ -1,7 +1,6 @@
 #!/bin/bash
 clear
 source ShellBot.sh
-touch lista
 
 [[ ! -e RESET ]] && touch RESET
 api_bot=$1

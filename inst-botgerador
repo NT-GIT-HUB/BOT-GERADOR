@@ -2,6 +2,16 @@
 clear
 echo -e "\E[44;1;37m     INSTALACAO BOT SSH TESTE     \E[0m"
 echo -e "\nINSTALANDO AGUARDE...."
+
+echo -e "\033[1;33mALGUNS PACOTES SAO EXTREMAMENTE  NECESSÁRIOS !\033[0m"
+echo ""
+inst_pct () {
+_pacotes=("unzip" "jq" "curl")
+for _prog in ${_pacotes[@]}; do
+apt install $_prog -y
+done
+}
+fun_bar 'inst_pct'
 apt update -y > /dev/null 2>&1 && apt install unzip at jq curl -y > /dev/null 2>&1
 mkdir $HOME/BOTGERADOR
 cd $HOME/BOTGERADOR && wget https://raw.githubusercontent.com/NT-GIT-HUB/BOT-GERADOR/main/botgen.zip
