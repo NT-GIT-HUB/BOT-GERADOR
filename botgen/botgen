@@ -6,13 +6,13 @@
     echo -ne "\033[1;32mINFORME O TOKEN\033[1;37m: "; read token
     echo ""
     echo -ne "\033[1;32mINFORME SEU ID\033[1;37m: "; read idtelegram
-    cd $HOME/BOT
+    cd $HOME/BOTGERADOR
     screen -dmS bot_gen ./botgerador $token $idtelegram > /dev/null 2>&1
     [[ $(grep -wc "bot_gen" /etc/autostart) = '0' ]] && {
-                echo -e "ps x | grep 'bot_gen' | grep -v 'grep' || cd /root/BOT && sudo screen -dmS bot_gen ./botgerador $token $idtelegram && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_gen' | grep -v 'grep' || cd /root/BOTGERADOR && sudo screen -dmS bot_gen ./botgerador $token $idtelegram && cd $HOME" >>/etc/autostart
             } || {
                 sed -i '/bot_gen/d' /etc/autostart
-                echo -e "ps x | grep 'bot_gen' | grep -v 'grep' || cd /root/BOT && sudo screen -dmS bot_gen ./botgerador $token $idtelegram && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_gen' | grep -v 'grep' || cd /root/BOTGERADOR && sudo screen -dmS bot_gen ./botgerador $token $idtelegram && cd $HOME" >>/etc/autostart
             }  
     clear && echo "BOT ATIVADO"
 } || {
