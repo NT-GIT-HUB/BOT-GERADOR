@@ -1,8 +1,6 @@
 #!/bin/bash
 clear
 source ShellBot.sh
-
-[[ ! -e RESET ]] && touch RESET
 api_bot=$1
 id_admin=$2
 ShellBot.init --token "$api_bot" --monitor --flush
